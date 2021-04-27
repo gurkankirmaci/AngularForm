@@ -2,7 +2,7 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.3.
 
-This API link is temporary link. You can change url link and connect your API .
+This API link is a temporary link. You can change url link and connect your API .
 
 ## Development server
 
