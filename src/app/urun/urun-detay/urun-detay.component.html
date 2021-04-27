@@ -1,0 +1,31 @@
+
+<h3>Ürün Detay Listesi</h3>
+<table class="table" *ngIf="status === true">
+  <thead>
+    <th>id</th>
+    <th>name</th>
+  </thead>
+  <thead>
+    <tr *ngFor="let b of model">
+      <th scope="col">{{b.id}}</th>
+      <th scope="col">{{b.ad}}</th>
+      <button class="btn btn-success" (click)="edit(b)">edit</button>
+    </tr>
+  </thead>
+</table>
+<button class="btn btn-success" (click)="ty()" *ngIf="status === true">Urun Detay Ekle</button>
+
+<form>
+ <div class="form-group"  *ngIf="status === false">
+
+  <label for="exampleInputEmail1">isim</label>
+  <input type="email" class="form-control" id="exampleInputEmail1" placeholder="ad" [(ngModel)]="yeniD.ad" name="ad" >
+   <br>
+
+    <button type="btn btn-danger" *ngIf="yeniD.id == null" (click)="save()"> Kaydet </button>
+    <button type="btn btn-info"  (click)="cancel()"> Vazgeç </button>
+    <button type="btn btn-info" *ngIf="yeniD.id != null"  (click)="update()"> Update </button>
+</div>
+</form>
+
+

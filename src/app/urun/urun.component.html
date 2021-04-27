@@ -1,0 +1,54 @@
+
+<h3>Ürün Listesi</h3>
+<table class="table" *ngIf="status === true">
+  <thead>
+    <th>id</th>
+    <th>name</th>
+    <th>Alıs Fiyatı</th>
+    <th>Satıs Fiyatı</th>
+    <th>Acıklama</th>
+  </thead>
+  <thead>
+    <tr *ngFor="let a of model">
+      <th scope="col">{{a.id}}</th>
+      <th scope="col">{{a.ad}}</th>
+      <th scope="col">{{a.alisFiyati}}</th>
+      <th scope="col">{{a.satisFiyati}}</th>
+      <th scope="col">{{a.aciklama}}</th>
+      <button class="btn btn-success" (click)="edit(a)">edit</button>
+    </tr>
+  </thead>
+</table>
+<button class="btn btn-success" (click)="ty()" *ngIf="status === true">Urun Ekle</button>
+
+<form>
+ <div class="form-group" *ngIf="status === false">
+
+  <!--
+  <label for="exampleInputEmail1">Kategori:</label>
+  <select [(ngModel)]="yeni.urunTipId" name="yeni.urunTipId">
+    <option *ngFor ="let tip of tipler" (ngvalue)="tip.id" > {{tip.ad}} </option>
+  </select>
+  <br>
+  -->
+
+  <label for="exampleInputEmail1">isim</label>
+  <input type="email" class="form-control" id="exampleInputEmail1" placeholder="ad" [(ngModel)]="yeni.ad" name="ad" >
+   <br>
+
+  <label for="exampleInputEmail1">alis fiyati</label>
+  <input type="email" class="form-control" id="exampleInputEmail1" placeholder="aliş fiyati" [(ngModel)]="yeni.alisFiyati" name="alisFiyati"><br>
+
+  <label for="exampleInputEmail1">satis fiyati</label>
+  <input type="email" class="form-control" id="exampleInputEmail1" placeholder="satiş fiyati" [(ngModel)]="yeni.satisFiyati" name="satisFiyati"><br>
+
+  <label for="exampleInputEmail1 ">aciklama</label>
+  <input type="email" class="form-control" id="exampleInputEmail1" placeholder="açıklama" [(ngModel)]="yeni.aciklama" name="aciklama" ><br>
+
+
+    <button type="btn btn-danger" *ngIf="yeni.id == null" (click)="save()"> Kaydet </button>
+    <button type="btn btn-info"   (click)="cancel()"> Vazgeç </button>
+    <button type="btn btn-info"   *ngIf="yeni.id!= null"  (click)="update()"> Update </button>
+</div>
+</form>
+
